@@ -1,0 +1,30 @@
+﻿@using CityButtonsApp.Data
+
+@page "/"
+
+<h3>City Buttons</h3>
+
+
+<div>
+    @foreach (var city in CityButtonsApp.Data.CityRepository.Cities)
+    {
+        <button class="btn btn-primary m-2">@city</button>
+    }
+</div>
+
+<h3>Server List</h3>
+
+
+<ul>
+    @foreach (var server in CityButtonsApp.Data.ServerRepository.Servers)
+    {
+        <li>@server</li>
+    }
+</ul>
+
+@code {
+    private void OnCityClick(string city)
+    {
+        Console.WriteLine($"City clicked: {city}");
+    }
+}
